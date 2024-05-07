@@ -17,3 +17,33 @@ conda create -n cnncls python=3.8 -y
 ```bash
 conda activate cnncls
 ```
+
+
+## MLflow
+
+- [Documentation](https://mlflow.org/docs/latest/index.html)
+
+- [MLflow tutorial](https://youtube.com/playlist?list=PLkz_y24mlSJZrqiZ4_cLUiP0CBN5wFmTb&si=zEp_C8zLHt1DzWKK)
+
+##### cmd
+- mlflow ui
+
+### dagshub
+[dagshub](https://dagshub.com/)
+
+MLFLOW_TRACKING_URI=https://dagshub.com/AzizKorbi/Kidney-Disease-Classification.mlflow \
+MLFLOW_TRACKING_USERNAME=AzizKorbi \
+MLFLOW_TRACKING_PASSWORD=5f77627c20b6fd4a3554a071d61ce51a044afb10 \
+python script.py
+
+Run this to export as env variables:
+
+```bash
+
+export MLFLOW_TRACKING_URI=https://dagshub.com/AzizKorbi/Kidney-Disease-Classification.mlflow
+
+export MLFLOW_TRACKING_USERNAME=AzizKorbi 
+
+export MLFLOW_TRACKING_PASSWORD=5f77627c20b6fd4a3554a071d61ce51a044afb10
+
+```
