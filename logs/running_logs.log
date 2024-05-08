@@ -375,3 +375,101 @@ x==========x]
 [2024-05-07 09:24:23,954: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2024-05-08 17:35:16,598: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2024-05-08 17:35:16,601: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-08 17:35:16,605: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-08 17:35:16,606: INFO: common: created directory at: artifacts]
+[2024-05-08 17:35:16,608: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-08 17:35:16,608: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-08 17:53:18,571: ERROR: stage_01_data_ingestion: ("Connection broken: ConnectionAbortedError(10053, 'Une connexion établie a été abandonnée par un logiciel de votre ordinateur hôte', None, 10053, None)", ConnectionAbortedError(10053, 'Une connexion établie a été abandonnée par un logiciel de votre ordinateur hôte', None, 10053, None))]
+Traceback (most recent call last):
+  File "C:\Users\aziz\miniconda3\envs\kidney\lib\site-packages\urllib3\response.py", line 737, in _error_catcher
+    yield
+  File "C:\Users\aziz\miniconda3\envs\kidney\lib\site-packages\urllib3\response.py", line 862, in _raw_read
+    data = self._fp_read(amt, read1=read1) if not fp_closed else b""
+  File "C:\Users\aziz\miniconda3\envs\kidney\lib\site-packages\urllib3\response.py", line 845, in _fp_read
+    return self._fp.read(amt) if amt is not None else self._fp.read()
+  File "C:\Users\aziz\miniconda3\envs\kidney\lib\http\client.py", line 459, in read
+    n = self.readinto(b)
+  File "C:\Users\aziz\miniconda3\envs\kidney\lib\http\client.py", line 503, in readinto
+    n = self.fp.readinto(b)
+  File "C:\Users\aziz\miniconda3\envs\kidney\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "C:\Users\aziz\miniconda3\envs\kidney\lib\ssl.py", line 1274, in recv_into
+    return self.read(nbytes, buffer)
+  File "C:\Users\aziz\miniconda3\envs\kidney\lib\ssl.py", line 1132, in read
+    return self._sslobj.read(len, buffer)
+ConnectionAbortedError: [WinError 10053] Une connexion établie a été abandonnée par un logiciel de votre ordinateur hôte
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aziz\miniconda3\envs\kidney\lib\site-packages\requests\models.py", line 816, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "C:\Users\aziz\miniconda3\envs\kidney\lib\site-packages\urllib3\response.py", line 1043, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+  File "C:\Users\aziz\miniconda3\envs\kidney\lib\site-packages\urllib3\response.py", line 935, in read
+    data = self._raw_read(amt)
+  File "C:\Users\aziz\miniconda3\envs\kidney\lib\site-packages\urllib3\response.py", line 891, in _raw_read
+    self._fp.close()
+  File "C:\Users\aziz\miniconda3\envs\kidney\lib\contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "C:\Users\aziz\miniconda3\envs\kidney\lib\site-packages\urllib3\response.py", line 764, in _error_catcher
+    raise ProtocolError(f"Connection broken: {e!r}", e) from e
+urllib3.exceptions.ProtocolError: ("Connection broken: ConnectionAbortedError(10053, 'Une connexion établie a été abandonnée par un logiciel de votre ordinateur hôte', None, 10053, None)", ConnectionAbortedError(10053, 'Une connexion établie a été abandonnée par un logiciel de votre ordinateur hôte', None, 10053, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "src/cnnClassifier/pipeline/stage_01_data_ingestion.py", line 25, in <module>
+    obj.main()
+  File "src/cnnClassifier/pipeline/stage_01_data_ingestion.py", line 16, in main
+    data_ingestion.download_file()
+  File "c:\users\aziz\desktop\kidney_disease_classification\kidney-disease-classification\src\cnnClassifier\components\data_ingestion.py", line 33, in download_file
+    raise e
+  File "c:\users\aziz\desktop\kidney_disease_classification\kidney-disease-classification\src\cnnClassifier\components\data_ingestion.py", line 28, in download_file
+    gdown.download(prefix+file_id,zip_download_dir)
+  File "C:\Users\aziz\miniconda3\envs\kidney\lib\site-packages\gdown\download.py", line 344, in download
+    for chunk in res.iter_content(chunk_size=CHUNK_SIZE):
+  File "C:\Users\aziz\miniconda3\envs\kidney\lib\site-packages\requests\models.py", line 818, in generate
+    raise ChunkedEncodingError(e)
+requests.exceptions.ChunkedEncodingError: ("Connection broken: ConnectionAbortedError(10053, 'Une connexion établie a été abandonnée par un logiciel de votre ordinateur hôte', None, 10053, None)", ConnectionAbortedError(10053, 'Une connexion établie a été abandonnée par un logiciel de votre ordinateur hôte', None, 10053, None))
+[2024-05-08 17:53:33,441: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2024-05-08 17:53:33,443: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-08 17:53:33,447: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-08 17:53:33,448: INFO: common: created directory at: artifacts]
+[2024-05-08 17:53:33,448: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-08 17:53:33,448: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-08 17:57:47,525: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-08 17:57:48,552: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2024-05-08 18:01:23,021: INFO: stage_02_prepare_base_model: *******************]
+[2024-05-08 18:01:23,021: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2024-05-08 18:01:23,023: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-08 18:01:23,028: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-08 18:01:23,030: INFO: common: created directory at: artifacts]
+[2024-05-08 18:01:23,031: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-05-08 18:01:23,815: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-08 18:01:25,498: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-05-08 18:06:11,098: INFO: stage_02_prepare_base_model: *******************]
+[2024-05-08 18:06:11,098: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2024-05-08 18:06:11,114: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-08 18:06:11,114: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-08 18:06:11,114: INFO: common: created directory at: artifacts]
+[2024-05-08 18:06:11,114: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-05-08 18:06:11,615: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-08 18:06:13,184: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-05-08 18:06:19,623: INFO: stage_03_model_trainer: *******************]
+[2024-05-08 18:06:19,623: INFO: stage_03_model_trainer: >>>>>> stage Training started <<<<<<]
+[2024-05-08 18:06:19,623: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-08 18:06:19,623: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-08 18:06:19,623: INFO: common: created directory at: artifacts]
+[2024-05-08 18:06:19,623: INFO: common: created directory at: artifacts\training]
+[2024-05-08 18:08:12,054: INFO: stage_03_model_trainer: >>>>>> stage Training completed <<<<<<
+
+x==========x]
