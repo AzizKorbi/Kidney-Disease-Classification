@@ -473,3 +473,22 @@ x==========x]
 [2024-05-08 18:08:12,054: INFO: stage_03_model_trainer: >>>>>> stage Training completed <<<<<<
 
 x==========x]
+[2024-05-08 18:15:17,059: INFO: stage_03_model_trainer: *******************]
+[2024-05-08 18:15:17,059: INFO: stage_03_model_trainer: >>>>>> stage Training started <<<<<<]
+[2024-05-08 18:15:17,059: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-08 18:15:17,059: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-08 18:15:17,059: INFO: common: created directory at: artifacts]
+[2024-05-08 18:15:17,059: INFO: common: created directory at: artifacts\training]
+[2024-05-08 18:17:08,010: INFO: stage_03_model_trainer: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-05-08 18:17:19,336: INFO: stage_04_model_evaluation: *******************]
+[2024-05-08 18:17:19,336: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-05-08 18:17:19,336: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-08 18:17:19,336: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-08 18:17:19,336: INFO: common: created directory at: artifacts]
+[2024-05-08 18:17:37,785: INFO: common: json file saved at: scores.json]
+[2024-05-08 18:17:37,801: INFO: common: json file saved at: scores.json]
+[2024-05-08 18:17:37,801: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
